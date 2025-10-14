@@ -1,13 +1,11 @@
 Raspberry PICO2 RISC-V (Pico Platform (PICO_PLATFORM) is 'rp2350-riscv') spi bitbang for
 128x64 OLED drawing a 8.24 fixed point  Mandelbrot set.
-
-
-
-
-
-
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 8.24 Fixed point fomulars used to convert doubles to fixed points in the Mandelbrot set function:
 
 #define DECIMAL_PRECISION 24
