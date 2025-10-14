@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.12)
+
+include(pico_sdk_import.cmake)
+project(spi_oled_bitbang_mandelbrot_fixedpoint)
+pico_sdk_init()
+add_executable(spi_oled_bitbang_mandelbrot_fixedpoint
+  spi_oled_bitbang_mandelbrot_fixedpoint.c
+  spi.S)
+
+target_link_libraries(spi_oled_bitbang_mandelbrot_fixedpoint pico_stdlib)
+pico_add_extra_outputs(spi_oled_bitbang_mandelbrot_fixedpoint)
+
+
