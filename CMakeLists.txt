@@ -1,13 +1,20 @@
 cmake_minimum_required(VERSION 3.12)
 
+set(TARGET_NAME spi_oled_bitbang_mandelbrot_fixedpoint)
+set(PICO_BOARD pico2)
 include(pico_sdk_import.cmake)
-project(spi_oled_bitbang_mandelbrot_fixedpoint)
+project(${TARGET_NAME})
+
 pico_sdk_init()
-add_executable(spi_oled_bitbang_mandelbrot_fixedpoint
-  spi_oled_bitbang_mandelbrot_fixedpoint.c
+add_executable(${TARGET_NAME}
+  ${TARGET_NAME}.c
   spi.S)
 
-target_link_libraries(spi_oled_bitbang_mandelbrot_fixedpoint pico_stdlib)
-pico_add_extra_outputs(spi_oled_bitbang_mandelbrot_fixedpoint)
 
+target_compile_definitions(
+${TARGET_NAME} PUBLIC
+PICO_XOSC_STARTUP_DELAY_MULTIPLIER=128
+)
+target_link_libraries(${TARGET_NAME} pico_stdlib)
+pico_add_extra_outputs(${TARGET_NAME})
 
