@@ -10,7 +10,7 @@ add_executable(${TARGET_NAME}
   ${TARGET_NAME}.c
   spi.S)
 
-
+# Fix for oscillator nominal state problem when booting after flashing
 target_compile_definitions(
 ${TARGET_NAME} PUBLIC
 PICO_XOSC_STARTUP_DELAY_MULTIPLIER=128
